@@ -3,7 +3,7 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
-    <script src="avatar.js"></script>
+    <script src="Creative.js"></script>
     <link rel="stylesheet" type="text/css" href="avatar.css">
     <meta charset="utf-8">
     <title>User Avatar Template</title>
@@ -11,18 +11,18 @@
 
 <body>
     <div class="Title">
-        <h1>Creating Users</h1>
+        <h1>Creating Cards</h1>
         <p>Using Angular</p>
     </div>
 
     <div ng-app='app' ng-controller='mainCtrl'>
         <p class='User-list'>
-            <lo ng-repeat='user in users'>
+            <lo ng-repeat='card in cards'>
                 <!--<div class='Avatar'>
                         <img ng-src='{{user.avatarUrl}}' />
                         <h4>{{user.name}}</h4>
                     </div>-->
-                <avatar user='user' />
+                <avatar user='card' />
 
             </lo>
             </ul>
@@ -30,11 +30,14 @@
 
                 <div class="formatoLeft">
                     <h2>New User</h2>
-                    <form name='userForm' ng-submit='addNew(userForm)'>
-                        <input type="text" placeholder='Name' ng-model='userForm.name' />
-                        <input type="text" placeholder='Image Url' ng-model='userForm.url' />
-                        <input type="text" placeholder='email address' ng-model='userForm.email' />
-                        <input type="submit" value="Submit"></button>
+                    <form name='cardForm' ng-submit='addNew(cardForm)'>
+                        <input type="text" placeholder='Name' ng-model='cardForm.name' />
+                        <input type="text" placeholder='Element' ng-model='cardForm.element' />
+                        <input type="text" placeholder='Image Url' ng-model='cardForm.url' />
+                        <input type="text" placeholder='Card level' ng-model='cardForm.level' />
+                        <input type="text" placeholder='Description' ng-model='cardForm.description' />                                                <input type="text" placeholder='Element' ng-model='cardForm.element' />
+                        <input type="text" placeholder='Rarity' ng-model='cardForm.rarity' />
+                        <input type="submit" value="Ready"></button>
                     </form>
                 </div>
                 <div class="serparation"></div>

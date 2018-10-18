@@ -8,29 +8,39 @@ function mainCtrl ($scope){
     
     
     
-    $scope.addNew = function(user){
+    $scope.addNew = function(card){
         //alert(user.name + ' ' + user.url);
-        $scope.users.push({
-            name: user.name,
-            avatarUrl: user.url,
-            avatarEmail: user.email
+        $scope.cards.push({
+            cardName: card.name,
+            cardElement: card.element,
+            cardUrl: card.url,
+            cardLevel: card.level,
+            cardDescription: card.descript,
+            cardRarity: card.rarity
         });
         
-        user.name = '';
-        user.url = '';
-        user.email = '';
+        card.name = '';
+        card.element = '';
+        card.url = '';
+        card.level = '';
+        card.descript = '';
+        card.rarity = '';
     };
 }
 
 function avatarDirective (){
     return {
         scope : {
-            user: '=' 
+            card: '=' 
         },
         restrict: 'E',
         replace: 'true',
         template: ('<div class="AvatarBorder">' +
                     '<div class="Avatar">' + 
+                    '<p> {{ '
+                    
+                    
+                    
                     '<img ng-src="{{user.avatarUrl}}" />' + 
                     '<h2>{{user.name}}</h2>' + 
                     '<p> {{user.avatarEmail}}</p>' +
