@@ -37,13 +37,12 @@ function avatarDirective (){
         replace: 'true',
         template: ('<div class="AvatarBorder">' +
                     '<div class="Avatar">' + 
-                    '<p> {{ '
-                    
-                    
-                    
-                    '<img ng-src="{{user.avatarUrl}}" />' + 
-                    '<h2>{{user.name}}</h2>' + 
-                    '<p> {{user.avatarEmail}}</p>' +
+                    '<p> {{card.name}}</p> ' +
+                    '<img ng-src="{{card.element}}" />' +
+                    '<img ng-src="{{card.url}}" />' + 
+                    '<p> {{card.level}}</p>' +
+                    '<p> {{card.descript}}</p>' +
+                    '<p> {{card.rarity}} </p>' +
                     '</div>' + '</div>'), 
         link : link
     };
