@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="avatar.js"></script>
+    <link rel="stylesheet" type="text/css" href="avatar.css">
+    <meta charset="utf-8">
+    <title>User Avatar Template</title>
+</head>
+
+<body>
+    <div class="Title">
+        <h1>Creating Users</h1>
+        <p>Using Angular</p>
+    </div>
+
+    <div ng-app='app' ng-controller='mainCtrl'>
+        <p class='User-list'>
+            <lo ng-repeat='user in users'>
+                <!--<div class='Avatar'>
+                        <img ng-src='{{user.avatarUrl}}' />
+                        <h4>{{user.name}}</h4>
+                    </div>-->
+                <avatar user='user' />
+
+            </lo>
+            </ul>
+            <div class="row">
+
+                <div class="formatoLeft">
+                    <h2>New User</h2>
+                    <form name='userForm' ng-submit='addNew(userForm)'>
+                        <input type="text" placeholder='Name' ng-model='userForm.name' />
+                        <input type="text" placeholder='Image Url' ng-model='userForm.url' />
+                        <input type="text" placeholder='email address' ng-model='userForm.email' />
+                        <input type="submit" value="Submit"></button>
+                    </form>
+                </div>
+                <div class="serparation"></div>
+                <div class="formatoRight">
+                    <div class="Avatar">
+                        <img ng-src="/../PicturesInex/DrStrangeFirstAttempt.gif" title="Running Strange" />
+                        <h2>I am Example</h2>
+                        <p> iamexample@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+</html>
