@@ -4,7 +4,7 @@ angular.module('app', [])
 
 
 function mainCtrl ($scope){
-    $scope.users= [];
+    $scope.cards= [];
     
     
     
@@ -15,7 +15,7 @@ function mainCtrl ($scope){
             cardElement: card.element,
             cardUrl: card.url,
             cardLevel: card.level,
-            cardDescription: card.descript,
+            cardDescript: card.descript,
             cardRarity: card.rarity
         });
         
@@ -37,18 +37,19 @@ function avatarDirective (){
         replace: 'true',
         template: ('<div class="AvatarBorder">' +
                     '<div class="Avatar">' + 
-                    '<p> {{card.name}}</p> ' +
-                    '<img ng-src="{{card.element}}" />' +
-                    '<img ng-src="{{card.url}}" />' + 
-                    '<p> {{card.level}}</p>' +
-                    '<p> {{card.descript}}</p>' +
-                    '<p> {{card.rarity}} </p>' +
+                    '<p> {{card.cardName}}</p> ' +
+                    //'<img ng-src="{{card.element}}" />' +
+                    '<p> {{card.cardElement}}</p>' +
+                    '<img ng-src="{{card.cardUrl}}" />' + 
+                    '<p> {{card.cardLevel}}</p>' +
+                    '<p> {{card.cardDescript}}</p>' +
+                    '<p> {{card.cardRarity}} </p>' +
                     '</div>' + '</div>'), 
         link : link
     };
     function link(scope) {
-        if(!scope.user.avatarUrl){
-            scope.user.avatarUrl = 'https://www.drupal.org/files/issues/default-avatar.png';
+        if(!scope.card.cardUrl){
+            scope.card.cardUrl = 'https://www.drupal.org/files/issues/default-avatar.png';
         }
     }
 }

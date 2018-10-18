@@ -16,13 +16,13 @@
     </div>
 
     <div ng-app='app' ng-controller='mainCtrl'>
-        <p class='User-list'>
+        <p class='Card-list'>
             <lo ng-repeat='card in cards'>
                 <!--<div class='Avatar'>
                         <img ng-src='{{user.avatarUrl}}' />
                         <h4>{{user.name}}</h4>
                     </div>-->
-                <avatar user='card' />
+                <avatar card='card' />
 
             </lo>
             </ul>
@@ -35,7 +35,7 @@
                         <input type="text" placeholder='Element' ng-model='cardForm.element' />
                         <input type="text" placeholder='Image Url' ng-model='cardForm.url' />
                         <input type="text" placeholder='Card level' ng-model='cardForm.level' />
-                        <input type="text" placeholder='Description' ng-model='cardForm.description' />                                                <input type="text" placeholder='Element' ng-model='cardForm.element' />
+                        <input type="text" placeholder='Description' ng-model='cardForm.descript' />
                         <input type="text" placeholder='Rarity' ng-model='cardForm.rarity' />
                         <input type="submit" value="Ready"></button>
                     </form>
