@@ -4,53 +4,60 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     <script src="Creative.js"></script>
-    <link rel="stylesheet" type="text/css" href="avatar.css">
+    <link rel="stylesheet" type="text/css" href="Creative.css">
     <meta charset="utf-8">
-    <title>User Avatar Template</title>
+    <title>Dungeon </title>
 </head>
 
 <body>
     <div class="Title">
         <h1>Creating Cards</h1>
         <p>Using Angular</p>
-    </div>
+    </div><br>
 
     <div ng-app='app' ng-controller='mainCtrl'>
-        <p class='Card-list'>
-            <lo ng-repeat='card in cards'>
-                <!--<div class='Avatar'>
-                        <img ng-src='{{user.avatarUrl}}' />
-                        <h4>{{user.name}}</h4>
-                    </div>-->
-                <avatar card='card' />
 
-            </lo>
-            </ul>
-            <div class="row">
+<!--        <div ng-app="" ng-init="myCol='lightblue'">
+            <input style="background-color:{{myCol}}" ng-model="myCol" />
+        </div>-->
+        
+        <div class="row">
+            <div class="formatoLeft">
+                <h2>New User</h2>
 
-                <div class="formatoLeft">
-                    <h2>New User</h2>
-                    <form name='cardForm' ng-submit='addNew(cardForm)'>
-                        <input type="text" placeholder='Name' ng-model='cardForm.name' />
-                        <input type="text" placeholder='Element' ng-model='cardForm.element' />
-                        <input type="text" placeholder='Image Url' ng-model='cardForm.url' />
-                        <input type="text" placeholder='Card level' ng-model='cardForm.level' />
-                        <input type="text" placeholder='Description' ng-model='cardForm.descript' />
-                        <input type="text" placeholder='Rarity' ng-model='cardForm.rarity' />
-                        <input type="submit" value="Ready"></button>
-                    </form>
-                </div>
-                <div class="serparation"></div>
-                <div class="formatoRight">
-                    <div class="Avatar">
-                        <img ng-src="/../PicturesInex/DrStrangeFirstAttempt.gif" title="Running Strange" />
-                        <h2>I am Example</h2>
-                        <p> iamexample@gmail.com</p>
+                <form name='cardForm' ng-submit='addNew(cardForm)'>
+                    <input type="text" placeholder='Name' ng-model='cardForm.name' />
+                    <select ng-model="selectedElement" ng-options="x for x in names"></select>
+
+
+                    <input type="text" placeholder='Element' ng-model='cardForm.element' />
+                    <input type="text" placeholder='Image Url' ng-model='cardForm.url' />
+                    <input type="text" placeholder='Card level' ng-model='cardForm.level' />
+                    <input type="text" placeholder='Description' ng-model='cardForm.descript' />
+                    <input type="text" placeholder='Rarity' ng-model='cardForm.rarity' />
+                    <input type="submit" value="Ready"></button>
+                </form>
+            </div>
+            <div class="serparation"></div>
+            <div class="formatoRight">
+                <div class="Avatar">
+                    <img id="img_element" ng-src="img_earth.png">
+                    <h2>Cow Fart</h2>
+                    <img ng-src="https://media.istockphoto.com/photos/black-and-white-cow-with-blue-sky-picture-id502874496?k=6&m=502874496&s=612x612&w=0&h=H23P_qrgVAz2iCbDZJ-6Q9HGqgUOsuiiaT-Ai1lTZis=" title="Running Strange" />
+                    <img id="img_level" ng-src="gold_star.png">
+                    <div id="description_box">
+                        <p>A cow that was trained by the most skilled ancient monks in Asia. It's stealth abilities can deceive any opponent. <br> Silence but mortal. </p>
                     </div>
+                    <p id="rare_status">rarity</p>
                 </div>
             </div>
-    </div>
+        </div>
 
+        <p class='Card-list'>
+            <div ng-repeat='card in cards' class="game">
+                <avatar card='card' />
+            </div>
+    </div>
 </body>
 
 </html>
