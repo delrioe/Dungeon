@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
 .Title {
     border-radius: 10px;
-    background-color: #f2f2f2;
+    background-color: #b3d1b9;
     padding: 5px;
     overflow: auto;
     text-align: center;
@@ -11,7 +12,8 @@ lo {
 }
 
 body {
-    background-color: #f2f2f2;
+    font-family: ABeeZee;
+    background-color: #184f21;
 }
 
 .User-list {
@@ -24,7 +26,7 @@ body {
 
 .Avatar {
     border-radius: 10px;
-    background-color: #8c6f40;
+    background-color: #c1c0bf;
     padding: 5px;
     overflow: auto;
     width: 275px;
@@ -55,7 +57,7 @@ body {
 
 .Avatar #description_box{
     width:100%;
-    background-color: #bcc0c6;
+    background-color: #ffffff;
     border-radius: 5px;
 }
 .Avatar #rare_status{
@@ -65,8 +67,6 @@ body {
 
     
 }
-
-
 
 .Avatar h2 {
     text-transform: capitalize;
@@ -78,6 +78,7 @@ body {
 .Avatar p {
     margin: 0;
     padding: 3px;
+    font-size: 14px;
 }
 
 
@@ -99,7 +100,7 @@ select {
 
 input[type=submit] {
     width: 100%;
-    background-color: #4f6cff;
+    background-color: #58aa67;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -109,7 +110,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #384ebc;
+    background-color: #36683f;
 }
 
 
@@ -136,4 +137,8 @@ input[type=submit]:hover {
     border-width: 20px;
     border-color: #555555;
     border-style: solid;
+}
+
+.descriptInput{
+    height: 100px;
 }

@@ -3,17 +3,31 @@ angular.module('app', [])
     .directive('avatar', avatarDirective);
 
 function mainCtrl($scope) {
-    $scope.names = ["red", "blue", "gray", "brown"];
-
+    $scope.colors = ["Fire", "Water", "Wind", "Earth"];
+    //$scope.colors = ["red", "blue"]
     $scope.cards = [];
 
     $scope.addNew = function(card) {
+        var color = "";
+        if(card.element === "Fire"){
+            color = "#ba6b66";
+        }else if(card.element === "Water"){
+            color = "#6196ed";
+        }else if (card.element === "Wind"){
+            color = "#c1c0bf";
+        }else if(card.element === "Earth"){
+            color = "#ba8550";
+        }else{
+            card.element = 0;
+        }
+        
         //alert(user.name + ' ' + user.url);
         $scope.cards.push({
             cardName: card.name,
             cardElement: card.element,
+            cardColor: color,
             cardUrl: card.url,
-            cardLevel: card.level,
+            //cardLevel: card.level,
             cardDescript: card.descript,
             cardRarity: card.rarity
         });
@@ -34,15 +48,14 @@ function mainCtrl($scope) {
 
 
 function avatarDirective() {
-    var cardColor = "{{selectedElement}}"
     return {
         scope: {
             card: '='
         },
         restrict: 'E',
         replace: 'true',
-        template: ('<div class="Avatar" style="background-color:' +cardColor+ '">' +
-            '<img id="img_element" ng-src="{{card.cardElement}}">' +
+        template: ('<div class="Avatar" style="background-color:{{card.cardColor}}">' +
+            '<img id="img_element" ng-src="{{card.cardElement}}.png">' +
             '<h2> {{card.cardName}}</h2> ' +
             '<img ng-src="{{card.cardUrl}}" />' +
             '<img id="img_level" ng-src="gold_star.png">' +
@@ -53,7 +66,6 @@ function avatarDirective() {
             '</div>'),
         link: link
     };
-
     function link(scope) {
         // no name provided
         if(!scope.card.cardName) {
@@ -66,23 +78,27 @@ function avatarDirective() {
         }
         
         // No element provided
-        if (!scope.card.cardElement) {
+        if (scope.card.cardElement === 0) {
             var x = Math.floor((Math.random() * 4) + 1);
             switch (x) {
                 case 1:
-                    scope.card.cardElement = "img_earth.png";
+                    scope.card.cardElement = "Earth";
+                    scope.card.cardColor = "#ba8550";
                     break;
                 case 2:
-                    scope.card.cardElement = "img_fire.png";
+                    scope.card.cardElement = "Fire";
+                    scope.card.cardColor= "#ba6b66";
                     break;
                 case 3:
-                    scope.card.cardElement = "img_water.png";
+                    scope.card.cardElement = "Water";
+                    scope.card.cardColor = "#6196ed";
                     break;
                 case 4:
-                    scope.card.cardElement = "img_wind.png";
+                    scope.card.cardElement = "Wind";
+                    scope.card.cardColor = "#c1c0bf"
                     break;
                 default:
-                    scope.card.cardElement = "gold_star.png";
+                    scope.card.cardElement = "Wind";
                     break;
             }
         }
@@ -120,15 +136,6 @@ function avatarDirective() {
             }
         }
         
-        if(scope.card.cardElement == "fire"){
-            
-        }else if (scope.card.cardElement == "water"){
-            
-        }else if (scope.card.cardElement == "wind"){
-            
-        }else{
-            
-        }
 
     }
 }
